@@ -1,0 +1,58 @@
+# Python
+__pycache__/
+__init__.py
+*.py[cod]
+*.so
+
+# Virtual environment
+.venv/
+venv/
+env/
+
+# Environment
+.env
+
+# Testing
+.pytest_cache/
+.coverage
+htmlcov/
+
+# IDE
+.vscode/
+.idea/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+
+# Database
+data/chroma/
+
+# BM25
+data/bm25_index.json
+
+# Videos
+data/videos/*.mp4
+data/videos/*.mov
+data/videos/*.avi
+data/videos/*.mkv
+data/videos/*.webm
+
+# Audio
+data/audio/*.mp3
+data/audio/*.wav
+data/audio/*.m4a
+data/audio/*.ogg
+data/audio/*.flac
+
+# Frames
+data/frames/
+
+# Model cache
+models/
+
+# Jupyter
+.ipynb_checkpoints/
