@@ -1,0 +1,14 @@
+{
+  "title": "AI Generation Platform",
+  "schemaVersion": 39,
+  "version": 1,
+  "panels": [
+    {"type":"timeseries","title":"Generation Rate","gridPos":{"x":0,"y":0,"w":12,"h":7},"targets":[{"expr":"rate(ai_generation_total[5m])","legendFormat":"requests/s"}]},
+    {"type":"timeseries","title":"Latency","gridPos":{"x":12,"y":0,"w":12,"h":7},"targets":[{"expr":"histogram_quantile(0.95, sum(rate(ai_generation_latency_seconds_bucket[5m])) by (le))","legendFormat":"p95"}]},
+    {"type":"timeseries","title":"Quality Score","gridPos":{"x":0,"y":7,"w":12,"h":7},"targets":[{"expr":"histogram_quantile(0.5, sum(rate(ai_generation_quality_score_bucket[5m])) by (le,brand))","legendFormat":"{{brand}}"}]},
+    {"type":"timeseries","title":"Estimated Cost","gridPos":{"x":12,"y":7,"w":12,"h":7},"targets":[{"expr":"increase(ai_generation_estimated_cost_usd_total[1h])","legendFormat":"USD/hour"}]},
+    {"type":"stat","title":"Safety Failures","gridPos":{"x":0,"y":14,"w":8,"h":5},"targets":[{"expr":"increase(ai_generation_safety_failures_total[24h])"}]},
+    {"type":"stat","title":"Active Requests","gridPos":{"x":8,"y":14,"w":8,"h":5},"targets":[{"expr":"ai_generation_active_requests"}]},
+    {"type":"stat","title":"Failures","gridPos":{"x":16,"y":14,"w":8,"h":5},"targets":[{"expr":"increase(ai_generation_failures_total[24h])"}]}
+  ]
+}

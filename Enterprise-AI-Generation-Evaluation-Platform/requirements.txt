@@ -1,0 +1,13 @@
+fastapi
+uvicorn[standard]
+python-multipart
+psycopg[binary]
+pgvector
+sentence-transformers
+pypdf
+python-docx
+requests
+prometheus-client
+pydantic-settings
+pytest
+httpx
